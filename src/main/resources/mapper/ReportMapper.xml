@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.system.mapper.ReportMapper">
+    <resultMap id="map" type="com.common.system.entity.Report">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="remark" column="remark"/>
+        <result property="level" column="level"/>
+        <result property="pId" column="p_id"/>
+    </resultMap>
+    <select id="findReportByUid" resultMap="map">
+        select report.id,report.remark,report.p_id,report.name,report.level from report left join project on report.p_id = project.id where project.u_id = #{uid}
+    </select>
+
+</mapper>

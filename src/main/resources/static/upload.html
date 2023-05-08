@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Topology Image</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Upload Topology Image</h1>
+<form method="POST" enctype="multipart/form-data" onsubmit="submitForm(event)">
+    <input type="file" name="file" accept="image/*" />
+    <br /><br />
+    <input type="submit" value="Upload" />
+</form>
+<br />
+<h2>Assets Detection Results</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Asset Type</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody id="resultsTableBody">
+    </tbody>
+</table>
+<script>
+    const detectAssetsUrl = '/detect_assets';
+
+    function submitForm(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        fetch(detectAssetsUrl, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(response.statusText);
+                }
+            })
+            .then(data => updateResultsTable(data))
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            });
+    }
+
+    function updateResultsTable(data) {
+        const resultsTableBody = document.getElementById('resultsTableBody');
+        let tableContent = '';
+        for (const [assetType, count] of Object.entries(data)) {
+            tableContent += `
+                    <tr>
+                        <td>${assetType}</td>
+                        <td>${count}</td>
+                    </tr>
+                `;
+        }
+        resultsTableBody.innerHTML = tableContent;
+    }
+</script>
+</body>
+</html>

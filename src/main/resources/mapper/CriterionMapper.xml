@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.system.mapper.CriterionMapper">
+    <resultMap id="map" type="com.common.system.entity.Refer">
+        <result column="refer" property="referName"/>
+        <result column="post" property="post"/>
+        <result column="kind" property="kind"/>
+    </resultMap>
+    <resultMap id="criterionMap" type="com.common.system.entity.Criterion">
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="refer" property="refer"/>
+        <result column="class" property="cla"/>
+    </resultMap>
+    <insert id="insert2">
+        INSERT INTO criterion2 (type, refer, class)
+        VALUES (#{type}, #{refer}, #{cla});
+    </insert>
+    <delete id="deleteAll">
+        DELETE FROM criterion2
+    </delete>
+    <select id="getClaList" resultType="java.lang.String">
+        select DISTINCT class from criterion
+    </select>
+    <select id="getTypeListByCla" resultType="java.lang.String">
+        select DISTINCT type from criterion where class = #{cla}
+    </select>
+    <select id="getReferByType" resultMap="map" parameterType="map">
+        select refer,post,kind from criterion left join report_item on criterion.id = report_item.c_id where type = #{type} AND r_id = #{rid}
+    </select>
+    <select id="getAll" resultMap="criterionMap">
+        select * from criterion
+    </select>
+    <!--    <select id="getCidsByType" resultType="java.lang.Integer">-->
+<!--        select id from criterion where type = #{type}-->
+<!--    </select>-->
+
+</mapper>
