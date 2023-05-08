@@ -12,6 +12,9 @@
    - 1.3 菜单管理
    - 1.4 API说明
    - 1.5 数据库日志
+   - 1.6 项目管理
+   - 1.7 报告管理
+   - 1.8 指标管理
 
 ## 技术选型
 * TensorFlow 2.4.1 
@@ -29,16 +32,23 @@
 
 ## 账密
 super 123456
+
 admin 123456
+
 yangxiufeng 123456
 
-## 运行截图
+## 运行
 
-启动python
+1）启动python。python项目在python分支下，下载到本地后运行如下命令启动。
 ```python
 python NumOfPicAPI.py
 ```
 ![img.png](img.png)
+
+2）启动SpringBoot项目。
+
+![img_1.png](img_1.png)
+
 
 
 
