@@ -12,7 +12,6 @@
  File Encoding         : 65001
 
  Date: 08/05/2023 15:22:00
-
 */
 
 SET NAMES utf8mb4;
