@@ -24,9 +24,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by Mr.Yangxiufeng on 2017/6/20.
- * Time:15:43
- * ProjectName:Common-admin
+ *
+ * Shiro configuration class, which is used to configure the functionality and components provided by the Shiro framework.
+ *
  */
 @Configuration
 public class ShiroConfig {
@@ -34,6 +34,10 @@ public class ShiroConfig {
     protected static final long MILLIS_PER_MINUTE = 60 * MILLIS_PER_SECOND;
     protected static final long MILLIS_PER_HOUR = 60 * MILLIS_PER_MINUTE;
 
+    /**
+     * Configure the EnCache cache manager
+     * @return EhCacheManager object thar supports Shiro caching.
+     */
     @Bean
     public EhCacheManager cacheManager() {
         EhCacheManager cacheManager = new EhCacheManager();
