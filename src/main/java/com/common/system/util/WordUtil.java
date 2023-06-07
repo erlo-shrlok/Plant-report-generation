@@ -14,7 +14,6 @@ public class WordUtil {
     /**
      * 使用FreeMarker自动生成Word文档
      * @param dataMap   生成Word文档所需要的数据
-     * @param fileName  生成Word文档的全路径名称
      */
     public static void generateWord(Map<String, Object> dataMap, OutputStream outputStream) throws Exception {
         // 设置FreeMarker的版本和编码格式

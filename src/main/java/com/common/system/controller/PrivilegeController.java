@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
 
-/**
- * Created by Mr.Yangxiufeng on 2017/8/7.
- * Time:15:24
- * ProjectName:Common-admin
- */
 @Controller
 @RequestMapping(value = "privilege")
 public class PrivilegeController {

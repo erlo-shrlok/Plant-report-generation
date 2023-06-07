@@ -3,11 +3,6 @@ package com.common.system.config.xss;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
-/**
- * Created by Mr.Yangxiufeng on 2017/6/29.
- * Time:9:49
- * ProjectName:common-admin
- */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
     public XssHttpServletRequestWrapper(HttpServletRequest request) {
         super(request);

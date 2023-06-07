@@ -39,7 +39,12 @@
         diskExpiryThreadIntervalSeconds- The number of seconds between runs of the disk expiry thread. The default value
                                          is 120 seconds.
         -->
-
+    <!--maxElementsInMemory：内存中可以存放的缓存对象的数量上限-->
+    <!--eternal：对象是否永久有效，如果为 true，timeToIdleSeconds 和 timeToLiveSeconds 将被忽略-->
+    <!--overflowToDisk：内存中的缓存对象数量达到 maxElementsInMemory 时，是否将溢出的对象存储到磁盘中-->
+    <!--timeToIdleSeconds：对象空闲时间，指对象在多长时间没有被访问就会失效。0 表示无限大，即对象从不过期-->
+    <!--diskPersistent：是否在 JVM 关闭时持久化到磁盘-->
+    <!--diskExpiryThreadIntervalSeconds：磁盘清理线程运行间隔时间，用于清理过期的缓存对象。-->
     <defaultCache
             maxElementsInMemory="10000"
             eternal="false"

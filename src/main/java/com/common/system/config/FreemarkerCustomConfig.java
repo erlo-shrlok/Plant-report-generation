@@ -18,11 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/**
- * Created by Mr.Yangxiufeng on 2017/6/15.
- * Time:16:08
- * ProjectName:Common-admin
- */
 @Configuration
 public class FreemarkerCustomConfig {
     @Autowired

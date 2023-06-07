@@ -2,7 +2,6 @@ package com.common.system.controller;
 
 import com.common.system.shiro.ShiroKit;
 import com.common.system.shiro.ShiroUser;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -14,11 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by Mr.Yangxiufeng on 2017/6/15.
- * Time:15:58
- * ProjectName:Common-admin
- */
 @Controller
 public class LoginController extends BaseController{
     /**
