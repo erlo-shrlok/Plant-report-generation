@@ -11,7 +11,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 PATH_TO_MODEL_DIR = 'D:/Users/Documents/PycharmProjects/tensorFlowTest/exportedmodel/saved_model'
 PATH_TO_LABELS = 'D:/Temp/data/label_map.pbtxt'
-IMAGE_PATH = 'D:/Temp/data/images/image1.png'
+IMAGE_PATH = 'D:/Temp/data/images/image8.png'
 
 detect_fn = tf.saved_model.load(PATH_TO_MODEL_DIR)
 
